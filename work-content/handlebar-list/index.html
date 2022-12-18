@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top 10 of our products</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script id="productTemp" type="text/x-handlebars-template">
+        {{#if products}}
+            {{#each products}}
+            <div class="card">
+                <h2>{{this.name}}</h2>
+                <p>{{this.description}}</p>
+                <p class=card-price>{{this.price}}</p> 
+                <button onclick="removeCard(this)" class="card-remove" data-id={{this.id}}>Remove item</button>
+            </div>
+        {{/each}}
+        {{else}}
+        <div class="card">
+            <h2 class="card-placeholder">Oops, no items yet.</h2>
+            <p class="card-instruction">Click + Add to create your first item! </p>
+        </div>
+        {{/if}}
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap">
+  </head>
+  <body>
+    <div class="top-nav">
+        <a href="../../work/handlebars-list"><div class="back-arrow"><span><</span></div></a>
+        <h4>Work</h4> 
+    </div>
+    <div class="container">
+        <div class="wrapper-products">
+            <h1 class="page-title">
+            Our top selling products
+            </h1>
+            <div id="products">
+            </div>
+        </div>
+        <div class="wrapper-form">
+            <input id="collapsible-toggle" class="collapsible-toggle" type="checkbox">
+            <label for="collapsible-toggle" id="add-button" class="collapsible-label" tabindex="0">+ Add</label>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <form id="add-form" class="add-form">
+                        <input type="text" id="pname" name="pname" class="form-input" placeholder="Product Name" tabindex="1" required>
+                        <textarea id="description" name="description" rows="3" cols="30" placeholder="Tell us more about it!" tabindex="2" class="form-input" required></textarea>
+                        <input type="number" id="price" name="price" class="form-input" placeholder="Price in Euro's" tabindex="3" required>
+                        <input id="reset" type="button" tabindex="5" class="form-close" value="Cancel">
+                        <input id="save" type="submit" value="Add" tabindex="4" class="form-save">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  	<script src="main.js" type="text/javascript"></script>  
+  </body>
+</html>

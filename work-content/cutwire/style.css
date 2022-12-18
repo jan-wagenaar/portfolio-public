@@ -1,0 +1,445 @@
+:root {
+  /* type */
+  --font-size-small: 0.85rem;
+  --font-size-regular: 1rem;
+  --font-size-title: 1.5rem;
+  --font-size-large: 2rem;
+
+  /* colors */
+  --color-back: #EDEDED;
+  --color-base: #fff;
+  --color-text: #363636;
+  --color-text-disabled: #c2c2c2;
+  --color-accent: #D15550;
+
+  /* button style */
+  --shadow-normal: 0 10px #D1D1D1;
+  --shadow-normal-active: 0 5px #B9B9B9;
+  --shadow-normal-disabled: 0 5px #dbdbdb;
+  --shadow-normal-hover: 0 13px #D1D1D1;
+  --shadow-accent: 0 10px #A32520;
+  --shadow-accent-active: 0 5px #991C17;
+  --shadow-accent-hover: 0 13px #991C17;
+
+  /* transitions */
+  --transition-fast: all 0.1s ease-in-out;
+}
+
+html {
+  margin: 0;
+  padding:0;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: 'Work Sans';
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-back);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  background-color: var(--color-back);
+}
+
+/* Demo nav */
+
+.top-nav {
+	display: flex;
+	align-items: center;
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+}
+
+.back-arrow {
+	box-sizing: content-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	width: 70px;
+	background-color: #000;
+	transition: all 0.2s ease-in-out;
+}
+
+.back-arrow span {
+	font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+	font-size: 48px;
+	color: #fff;
+}
+
+.top-nav a, .top-nav a:hover, .top-nav a:focus, .top-nav a:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.top-nav a:hover .back-arrow, .top-nav a:active .back-arrow, .top-nav a:focus .back-arrow  {
+	padding-left: 20px;
+	background-color: #3d3d3d;
+}
+
+.top-nav h4 {
+	display: inline-block;
+	padding: 0 20px;
+	font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+	font-size: 21px;
+	color: #000;
+}
+
+/* End demo nav */
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-width: 40rem;
+  max-width: 50rem;
+  min-height: 30rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  overflow: visible;
+  margin: 2rem;
+}
+
+.header__icon {
+  width: 2rem;
+  height: auto;
+}
+
+.header__text {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.instructions {
+  margin-top: 42px;
+  margin-bottom: 21px;
+  text-align: center;
+  overflow: visible;
+}
+
+.instructions__button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2rem;
+  right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--color-back);
+  border-radius: 1.5rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.instructions__button:hover {
+  padding-left: 7rem;
+}
+
+.instructions__button-text {
+  font-weight: bold;
+  font-size: var(--font-size-regular);
+  text-decoration: none;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.instructions__button-text::before {
+  content: "Instructions";
+  position: absolute;
+  left: 0;
+  padding: 0 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.instructions__button:hover .instructions__button-text::before {
+  left: 0;
+  opacity: 1;
+}
+
+.instructions__wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--color-base);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+  transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.instructions__wrapper.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);	
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+
+.instructions__title {
+  margin: 2rem 0;
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.instructions__row {
+  margin: 0 auto;
+}
+
+.instructions__number {
+  margin: 0;
+  font-size: var(--font-size-title);
+  color: var(--color-text);
+}
+
+.instructions__text {
+  display: inline-block;
+  padding: 1rem;
+  max-width: 18rem;
+  color: var(--color-text);
+}
+
+.game__row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: visible;
+  width: 100%;
+}
+
+.game__bomb {
+  margin: 2rem 8rem;
+  min-width: 15rem;
+  width: 100%;
+  height: auto;
+}
+
+.game__wire {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.game__overlay {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-base);
+}
+
+  .overlay__scale {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+  transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.overlay__scale.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);	
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.button {
+  position: relative;
+  min-width: 10rem;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  user-select: none;
+  transition: var(--transition-fast);
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.game__inactive {
+  background-color: var(--color-back);
+  color: var(--color-text-disabled);
+  box-shadow: var(--shadow-normal);
+}
+
+.game__dead {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  margin: 0;
+}
+
+.game__dead-text {
+  font-weight: bold;
+}
+
+.game__accent {
+  background-color: var(--color-accent);
+  color: var(--color-base);
+  box-shadow: var(--shadow-accent);
+}
+
+.game__accent:hover, .game__accent:focus {
+  box-shadow: var(--shadow-accent-hover);
+  transform: translateY(-3px);
+}
+
+
+.game__accent:active {
+  box-shadow: var(--shadow-accent-active);
+  transform: translateY(5px);
+}
+
+.game__reset {
+  position: absolute;
+  display: block;
+  min-width: 10rem;
+  margin: 2rem auto;
+  bottom: 2rem;
+  background-color: var(--color-accent);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: var(--color-base);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-accent);
+  user-select: none;
+  transition: var(--transition-fast);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game__reset:hover, .game__reset:focus {
+  box-shadow: var(--shadow-accent-hover);
+  transform: translateY(-3px);
+}
+
+.game__reset:active {
+  box-shadow: var(--shadow-accent-active);
+  transform: translateY(5px);
+}
+
+#wire1, #wire2, #wire3 {
+  cursor: pointer;
+}
+
+.clock__text {
+  font-family: 'Work Sans'; 
+  font-size: 2.3rem;
+  font-weight: 900;
+  fill: #C1B1B0;
+}
+
+.score__column {
+  margin: 2rem 3rem;
+}
+
+.score__title {
+  font-weight: bold;
+}
+
+.score__number {
+  margin: 1rem auto;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 0rem) and (max-width: 48rem) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    max-height: 100vh;
+  }
+
+  .top-nav {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .back-arrow {
+    height: 50px; 
+  }
+
+  .header {
+    margin: 1rem;
+  }
+
+  .header__text {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .wrapper {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    margin: 2rem;
+    margin: 0;
+  }
+
+  .button {
+    min-width: 7rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .game__bomb {
+    min-width: 18rem;
+  }
+
+  .instructions__title {
+    margin: 1.5rem auto;
+  }
+}
+

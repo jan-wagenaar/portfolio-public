@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cut the wire!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" type="text/css" crossorigin="anonymous">
+    <link rel="icon" href="img/scissor.svg" type="image/svg">
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-nav">
+        <a href="../../work/cut-the-wire"><div class="back-arrow"><span><</span></div></a>
+        <h4>Work</h4> 
+      </div>
+      <section id="header" class="header">
+        <img src="img/scissor.svg" class="header__icon">
+        <p class="header__text">Cut the Wire</p>
+      </section>
+      <div class="wrapper">
+        <section id="explosion" class=" game__overlay overlay__scale"> 
+          <img src="img/dead.svg" class="game__dead">
+          <p class= "game__dead-text">Oops, you're dead now!</p>
+          <a id="reset" class="button game__reset">Try again</a>  
+        </section>
+        <section class="instructions">
+          <div class="instructions__button">
+            <span id="instructions-open" class="instructions__button-text">?</span>
+          </div>
+          <div id="instructions-wrapper" class="instructions__wrapper">
+            <h2 class="instructions__title">Instructions</h2> 
+            <div class="instructions__row">
+              <p class="instructions__number">1</p> 
+              <span class="instructions__text">One of these wires will trigger the bom</span>
+            </div>
+            <div class="instructions__row">
+              <p class="instructions__number">2</p> 
+              <span class="instructions__text">Your mission is to cut 3 wires without triggering the bomb</span>
+            </div>
+            <div class="instructions__row">
+              <p class="instructions__number">3</p> 
+              <span class="instructions__text">If you manage to avoid triggering the bomb until you cut the last wire, you win!</span>
+            </div>
+            <div class="instructions__row">
+              <p class="instructions__number">4</p> 
+              <span class="instructions__text">See if you can score a winning streak!</span>
+            </div>
+            <a id="instructions-close" class="button game__reset">Got it!</a>  
+          </div>
+      </section id="game" class="game">
+        <div class="game__row">
+        </div> 
+        <div class="game__row">
+          <svg xmlns="http://www.w3.org/2000/svg" id="svg-bomb" class="game__bomb" viewBox="0 0 459.71 318.45"><title>bomb</title><g id="bomb"><rect x="20.59" y="242.5" width="418.54" height="71.34" rx="11.7" ry="11.7" fill="#d15550" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="20.59" y="75.26" width="418.54" height="71.34" rx="10.27" ry="10.27" fill="#d15550" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="4" y="110.93" width="451.71" height="83.62" rx="13.87" ry="13.87" fill="#d15550" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="4" y="194.55" width="451.71" height="83.62" rx="13.87" ry="13.87" fill="#d15550" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="113.88" y="75.87" width="42.93" height="238.58" fill="#c1b1b0" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="302.66" y="75.87" width="42.93" height="238.58" fill="#c1b1b0" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/></g><g id="timer"><rect x="69.61" y="160.2" width="320.49" height="128.78" fill="#c1b1b0" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="156.68" y="180.2" width="146.34" height="88.78" fill="#4c2412"/><rect x="171.55" y="123.99" width="116.37" height="34.26" fill="#4c2412"/><g id="timer-text"></g></g><g id="wire3-cut"><path d="M324.36,51.81s-6.07-.55-9.13-1.8" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path d="M285.92,52.26a65.86,65.86,0,0,1,4.81-8" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path id="wire3-cut-part" d="M320.74,51.42c21.25,3,32.68,3.29,32.68,23.84" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><path id="wire3-cut-part-2" data-name="wire3-cut-part" d="M266.59,127.52S251.34,113,278.78,64.1c3.55-6.3,6.28-11.13,8.45-14.75" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/></g><g id="wire3"><path id="wire3-2" data-name="wire3" d="M266.59,127.52S251.34,113,278.78,64.1c24.11-42.9,10.46-17.13,42-12.68,21.25,3,32.68,3.29,32.68,23.84" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="259.29" y="6.32" width="104.68" height="130.5" fill="#4c2412" opacity="0"/></g><g id="wire2-cut"><path d="M234.59,29.36a18.68,18.68,0,0,1,5.33-4" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path d="M253.31,44.26a36.16,36.16,0,0,0,1-7.93" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path id="wire2-cut-part" d="M235.34,28.86a26.28,26.28,0,0,0-4,5.08c-7.7,13.91,2.85,28-9.28,41" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><path id="wire2-cut-part-2" data-name="wire2-cut-part" d="M232.3,127.2s-1.22-40.48,14.51-66.83a50.24,50.24,0,0,0,6.88-18.26" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/></g><g id="wire2"><path id="wire2-part" d="M232.3,127.52S231.08,87,246.81,60.69,249.86,13.37,235.22,29s.49,31.59-13.17,46.28" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="200.72" y="6.32" width="54" height="130.5" fill="#4c2412" opacity="0"/></g><g id="wire1-cut"><path d="M151.36,28.17a20.49,20.49,0,0,1,4-3.75" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path id="wire1-cut-part1" d="M151.36,28C139.15,43.52,144.19,55.23,117,56.78c-34.26,2-43,13.79-44.26,19.09" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><path d="M194,37.15c.26-5,.35-3.94,0-6.26" transform="translate(-3.08)" fill="none" stroke="#c1b1b0" stroke-miterlimit="10" stroke-width="3"/><path id="wire1-cut-part1-2" data-name="wire1-cut-part1" d="M200.25,127.52s-21-27.81-11.22-59a109.1,109.1,0,0,0,5-32.16" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/></g><g id="wire1"><path id="wire1-part" d="M200.25,127.52s-21-27.81-11.22-59,6.83-74.63-23.9-53.17S151.22,54.83,117,56.78s-43,13.79-44.26,19.09" transform="translate(-3.08)" fill="none" stroke="#4c2412" stroke-miterlimit="10" stroke-width="8"/><rect x="57.72" width="136.82" height="136.82" fill="#4c2412" opacity="0"/></g></svg>
+        </div>
+        <div class="game__row">
+          <div id="start" class="button game__inactive">Good luck!</div>  
+        </div>
+        <div class="game__row">
+          <div class="score__column">
+            <p class="score__title">Winning streak</p>
+            <p id="score-winning" class="score__number">0</p>
+          </div>
+          <div class="score__column">
+            <p class="score__title">Best streak</p>
+            <p id="score-best" class="score__number">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+</html>

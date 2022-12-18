@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #ffe6e2;
+    font-family: "Work Sans", sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 3rem 0;
+    min-width: 60rem;
+    min-height: 20rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    
+  }
+  
+  .wrapper {
+    position: relative;
+    flex: 0 auto;
+    display: flex;
+    margin-left: 4rem;
+    flex-grow: 1;
+    flex-direction: column; 
+  }
+  
+  .wrapper__row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    height: auto;
+    min-height: 1rem;
+  }
+
+  .wrapper__inner-row-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wrapper__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    min-height: 3rem;
+  }
+  
+  .wrapper__column-highlight {
+    position: relative;
+    top: -2.5rem;
+    right: 2rem;
+    min-width: 50%;
+    height: 35rem;
+    margin: 0;
+    background-color: #979aad;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  
+  /* Side bar */
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4em;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    background-color: #5468e7;
+    border-radius: 1.5rem 0 0 1.5rem;
+    overflow: hidden;
+  }
+
+  .sidebar.open {
+    width: 25em;
+  }
+  
+  .sidebar__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4em;
+    height: 4em;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  #dot2, #dot4 {
+    transition: transform 0.2s ease;
+  }
+  
+  .sidebar__menu:hover {
+    background-color: #3f4fb5;
+  }
+  
+  .sidebar__menu:hover #dot2, .sidebar__menu:hover #dot4 {
+    transform: translateX(0.25rem);
+  }
+
+  /* IMG */
+  
+  .img-highlight {
+    position: relative;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .icon__empty {
+    fill: red;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* Typography */
+
+  .row__subheader {
+    display: block;
+    margin: 2rem auto;
+    font-weight: 300;
+  }
+
+  /* Buttons */
+
+  .contacts__add {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #4c5ed3;
+    border-radius: 2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .contacts__add:hover, .contacts__add:active {
+    background-color: #4050bb;
+  }
