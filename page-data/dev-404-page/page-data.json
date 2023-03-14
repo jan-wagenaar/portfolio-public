@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---cache-dev-404-page-js",
-    "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404/"},{"path":"/404.html"},{"path":"/about/"},{"path":"/blog/"},{"path":"/contact/"},{"path":"/"},{"path":"/styleguide/"},{"path":"/work/"},{"path":"/blog/how-to-properly-create-reusable-ui-elements-in-outsystems/"},{"path":"/blog/everyone-that-switched-to-it-welcome/"},{"path":"/blog/things-i-learned-at-the-outsystems-advanced-bootcamp/"},{"path":"/blog/react-native-vs-low-code-developing-in-react-native/"},{"path":"/blog/why-you-should-learn-java-script-as-outsystems-developer/"},{"path":"/blog/outsystems-next-step-2022-what-you-need-to-know/"},{"path":"/work/cut-the-wire/"},{"path":"/work/handlebars-list/"},{"path":"/work/user-dashboard/"},{"path":"/work/life-expectancy-map/"},{"path":"/work/departments/"},{"path":"/work/sunny-side/"},{"path":"/work/to-do-rn/"}]}},"pageContext":{}},
-    "staticQueryHashes": []}
