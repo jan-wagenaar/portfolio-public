@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.jan-wagenaar.nl/sitemap/sitemap-index.xml
+Sitemap: https://www.jan-wagenaar.nl/sitemap-index.xml
 Host: https://www.jan-wagenaar.nl
